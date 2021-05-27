@@ -22,18 +22,25 @@ while True:
         skt=input("Son Kullanma Tarihi : ")
         urunCesidi=input("Ürün Çeşidi : ")
         stok=int(input("Stok : "))
+        urun=Urun(urunAdi,marka,fiyat,skt,urunCesidi,stok)
+        urunNesne.UrunEkle(urun)
         print("Ürün Eklendi")
     elif secim==2:
         urunAdi = input("Silmek İstediğiniz Ürün Adını Girin : ")
+        urunNesne.UrunSil(urunAdi)
     elif secim==3:
         urunAdi=input("Stoğunu Sorgulamak istediğiniz Ürün Adını Girin : ")
+        urunNesne.UrunAdinaGoreStokSorgula(urunAdi)
     elif secim==4:
         girdi = input("Hangi Tarihten Öncesini Silmek İstiyorsunuz (Örn:01.01.2021) : ")
+        urunNesne.MarkayaGoreStokSorgula(marka)
     elif secim==5:
         girdi=input("Satılacak Ürün Adı Girin : ")
-        print("Fiş Kesiliyor. Ödeme için teşekkürler!")
+        print("Satış Yapıldı!")
+        urunNesne.SatisYap(girdi)
     elif secim==6:
         girdi=input("İade Edilmek İstenen Ürün Adı Girin : ")
+        urunNesne.IadeAl(girdi)
     elif secim==7:
         urunNesne.GunlukYapilanSatis()
     elif secim==8:
@@ -43,4 +50,4 @@ while True:
     elif secim==10:
         break
     else:
-        print("Geçersiz İşlem!")
+        print("Geçersiz İşlem Yaptınız Tekrar Deneyiniz!")
